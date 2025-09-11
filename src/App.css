@@ -1,0 +1,175 @@
+/* Accessibility-focused styling for readability */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 18px;
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+header {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+main section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+main section:last-of-type {
+  border-bottom: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #2a2a2a;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #333333;
+}
+
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* Enhanced link styling for better accessibility */
+a {
+  color: #0066cc;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  margin-bottom: 2.5rem;
+  pathickness: 3px;
+}
+
+a:focus {
+  color: #004499;
+  background-color: #f0f8ff;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+a:visited {
+  color: #663399;
+}
+
+/* Improve list readability */
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+/* Better spacing for nested content */
+main section h3 + p {
+  margin-top: 0.5rem;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e0e0;
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+footer a {
+  font-size: 1rem;
+}
+
+/* Ensure sufficient color contrast for all text */
+@media (prefers-contrast: high) {
+  body {
+    color: #000000;
+  }
+
+  h2,
+  h3 {
+    color: #000000;
+  }
+
+  p,
+  li {
+    color: #1a1a1a;
+  }
+}
+
+/* Improve readability on smaller screens */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+  }
+}
