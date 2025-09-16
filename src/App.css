@@ -280,3 +280,32 @@ footer a {
     font-size: 1rem;
   }
 }
+
+/* Link-style buttons for internal navigation */
+.link-button {
+  background: none;
+  border: none;
+  color: #0066cc;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.link-button:hover {
+  color: #004499;
+  text-decoration-thickness: 3px;
+}
+
+.link-button:focus {
+  color: #004499;
+  background-color: #f0f8ff;
+  padding: 2px 4px;
+  border-radius: 3px;
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
