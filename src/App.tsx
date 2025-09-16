@@ -98,16 +98,26 @@ function App() {
                         I sure do have a story to tell you about these apple
                         wood canes.
                       </p>
-                      <a href='#story'>Learn more about Kit's Canes →</a>
-                    </section>
+                      <button
+                        onClick={() => setActiveTab('story')}
+                        className='link-button'
+                      >
+                        Learn more about Kit's Canes →
+                      </button>
 
-                    <section>
-                      <h2>Apple Wood Canes</h2>
-                      <p>
-                        Check out my handmade canes — available in several
-                        lengths and flexibilities.
-                      </p>
-                      <a href='#products'>View Inventory →</a>
+                      <section>
+                        <h2>Apple Wood Canes</h2>
+                        <p>
+                          Check out my handmade canes — available in several
+                          lengths and flexibilities.
+                        </p>
+                        <button
+                          onClick={() => setActiveTab('products')}
+                          className='link-button'
+                        >
+                          View Inventory →
+                        </button>
+                      </section>
                     </section>
                   </section>
                 )}
@@ -269,10 +279,6 @@ function App() {
 
       <footer>
         <p>© 2025 Kit's Canes</p>
-        <p>
-          <a href='/privacy'>Privacy Policy</a> |{' '}
-          <a href='/privacy-choices'>Your Privacy Choices</a>
-        </p>
       </footer>
     </div>
   );
