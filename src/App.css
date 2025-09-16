@@ -21,9 +21,8 @@ header {
 nav[role='tablist'] {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 0.4rem;
   margin-top: 1rem;
-  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 0.5rem;
 }
 
@@ -308,4 +307,51 @@ footer a {
   border-radius: 3px;
   outline: 3px solid #0066cc;
   outline-offset: 2px;
+}
+
+/* Product organization */
+.product-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.technical-specs {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+}
+
+.technical-specs h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.walking-sticks {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .product-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

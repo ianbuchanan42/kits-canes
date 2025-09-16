@@ -115,7 +115,7 @@ function App() {
                           onClick={() => setActiveTab('products')}
                           className='link-button'
                         >
-                          View Inventory →
+                          View Apple Wood Products →
                         </button>
                       </section>
                     </section>
@@ -125,41 +125,71 @@ function App() {
                 {tab.id === 'products' && (
                   <section id='products'>
                     <h2>Products</h2>
+
+                    {/* Apple Wood Canes */}
                     <section aria-labelledby='canes'>
-                      <h3 id='canes'>Options for Apple Wood Canes</h3>
-                      <p>Starting at $80</p>
-                      <p>
+                      <h3 id='canes'>Apple Wood Canes</h3>
+                      <p className='price'>Starting at $80</p>
+                      <p className='description'>
                         Ranging from 48-68 inches in single inch increments.
                         Custom lengths can be requested.
                       </p>
-                      <section aria-labelledby='flexibility'>
-                        <h4 id='flexibility'>Flexibility</h4>
+
+                      <div className='product-details'>
+                        <section aria-labelledby='flexibility'>
+                          <h4 id='flexibility'>Flexibility Options</h4>
+                          <ul>
+                            <li>Flexible Cane</li>
+                            <li>Rigid Cane</li>
+                            <li>Super Flex</li>
+                          </ul>
+                        </section>
+
+                        <section aria-labelledby='tip-options'>
+                          <h4 id='tip-options'>Tip Options</h4>
+                          <ul>
+                            <li>Metal Glide</li>
+                            <li>Ceramic</li>
+                            <li>Roller "Marshmallow"</li>
+                          </ul>
+                        </section>
+
+                        <section aria-labelledby='straps'>
+                          <h4 id='straps'>Handle Straps</h4>
+                          <ul>
+                            <li>Red</li>
+                            <li>Blue</li>
+                            <li>Other colors available</li>
+                          </ul>
+                        </section>
+                      </div>
+
+                      <section className='technical-specs'>
+                        <h4>Technical Details</h4>
                         <ul>
-                          <li>Flexible Cane</li>
-                          <li>Rigid Cane</li>
-                          <li>Super Flex</li>
-                        </ul>
-                      </section>
-                      <section aria-labelledby='tip-options'>
-                        <h4 id='tip-options'>Tip Options</h4>
-                        <ul>
-                          <li>Metal Glide</li>
-                          <li>Ceramic</li>
-                          <li>Roller</li>
-                        </ul>
-                      </section>
-                      <section aria-labelledby='straps'>
-                        <h4 id='straps'>Straps</h4>
-                        <ul>
-                          <li>Red</li>
-                          <li>Blue</li>
-                          <li>Other</li>
+                          <li>Lengths: 48"–68" (in 1" increments)</li>
+                          <li>Tip Adapter: Proprietary 5/16 threaded system</li>
+                          <li>Inventory: Most sizes and stiffness in stock</li>
+                          <li>Custom orders available</li>
+                          <li>
+                            All canes ship with protective placeholder bolt
+                            until tip is installed
+                          </li>
                         </ul>
                       </section>
                     </section>
 
-                    <section aria-labelledby='sticks'>
-                      <h3 id='sticks'>Walking Sticks – from $0.00 USD</h3>
+                    {/* Walking Sticks */}
+                    <section
+                      aria-labelledby='sticks'
+                      className='walking-sticks'
+                    >
+                      <h3 id='sticks'>Walking Sticks</h3>
+                      <p className='price'>From $0.00 USD</p>
+                      <p className='description'>
+                        Handcrafted walking sticks made from apple wood suckers,
+                        perfect for hiking and outdoor activities.
+                      </p>
                     </section>
                   </section>
                 )}
@@ -237,27 +267,6 @@ function App() {
                       Just like our orchard harvests, these canes are truly a
                       labor of love — and my artistic outlet.
                     </p>
-
-                    <section>
-                      <h2>Cane Details</h2>
-                      <ul>
-                        <li>Lengths: 48"–67" (in 1" increments)</li>
-                        <li>Flexibility: From very flexible to rigid</li>
-                        <li>
-                          Inventory: Most sizes and stiffness in stock, custom
-                          orders available
-                        </li>
-                        <li>Tip Adapter: Proprietary 5/16 threaded system</li>
-                        <li>
-                          Tip Options: Metal glide, ceramic tip, or roller
-                          "marshmallow" tip
-                        </li>
-                        <li>
-                          All canes ship with a protective placeholder bolt
-                          until a tip is installed
-                        </li>
-                      </ul>
-                    </section>
 
                     <section>
                       <h2>Contact</h2>
