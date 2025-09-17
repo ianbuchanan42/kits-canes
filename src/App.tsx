@@ -12,8 +12,8 @@ function App() {
     { id: 'orchard', label: 'The Apple Orchard', content: 'orchard' },
   ];
 
-  const handleTabKeyDown = (event: React.KeyboardEvent, tabId: string) => {
-    const currentIndex = tabs.findIndex((tab) => tab.id === tabId);
+  const handleTabListKeyDown = (event: React.KeyboardEvent) => {
+    const currentIndex = tabs.findIndex((tab) => tab.id === activeTab);
     let newIndex = currentIndex;
 
     switch (event.key) {
@@ -33,13 +33,22 @@ function App() {
         event.preventDefault();
         newIndex = tabs.length - 1;
         break;
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        // Move focus to content on Enter/Space
+        setTimeout(() => {
+          const tabPanel = document.getElementById(`panel-${activeTab}`);
+          tabPanel?.focus();
+        }, 0);
+        return;
       default:
         return;
     }
 
     const newTab = tabs[newIndex];
     setActiveTab(newTab.id);
-    // Focus the new tab button
+    // Focus the new tab button (not content)
     setTimeout(() => {
       const newTabButton = document.getElementById(`tab-${newTab.id}`);
       newTabButton?.focus();
@@ -48,16 +57,30 @@ function App() {
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
+    // Move focus to the tabpanel content
+    setTimeout(() => {
+      const tabPanel = document.getElementById(`panel-${tabId}`);
+      tabPanel?.focus();
+    }, 0);
   };
 
   return (
     <div>
+      {/* Skip link for keyboard users */}
+      <a href='#main-content' className='skip-link'>
+        Skip to main content
+      </a>
+
       <header>
         <h1>
-          <img id='logo' src='../public/logo.png' alt='' />
+          <img id='logo' src='../public/logo.png' alt="Kit's Canes logo" />
           Kit's Canes
         </h1>
-        <nav role='tablist' aria-label='Main navigation'>
+        <nav
+          role='tablist'
+          aria-label='Main navigation'
+          onKeyDown={handleTabListKeyDown}
+        >
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -66,10 +89,9 @@ function App() {
               role='tab'
               aria-selected={activeTab === tab.id}
               aria-controls={`panel-${tab.id}`}
-              tabIndex={activeTab === tab.id ? 0 : -1}
+              tabIndex={0} // All tabs focusable
               className={activeTab === tab.id ? 'active' : ''}
               onClick={() => handleTabClick(tab.id)}
-              onKeyDown={(e) => handleTabKeyDown(e, tab.id)}
             >
               {tab.label}
             </button>
@@ -77,7 +99,7 @@ function App() {
         </nav>
       </header>
 
-      <main>
+      <main id='main-content'>
         {tabs.map((tab) => (
           <div
             key={tab.id}
@@ -86,6 +108,7 @@ function App() {
             aria-labelledby={`tab-${tab.id}`}
             hidden={activeTab !== tab.id}
             className='tab-panel'
+            tabIndex={-1} // Focusable but not in tab order
           >
             {activeTab === tab.id && (
               <>
