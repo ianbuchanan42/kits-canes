@@ -10,6 +10,11 @@ function App() {
     { id: 'products', label: 'Apple Wood Products', content: 'products' },
     { id: 'story', label: "Kit's Story", content: 'story' },
     { id: 'orchard', label: 'The Apple Orchard', content: 'orchard' },
+    {
+      id: 'collaborations',
+      label: 'Collaborations',
+      content: 'collaborations',
+    },
   ];
 
   const handleTabListKeyDown = (event: React.KeyboardEvent) => {
@@ -300,6 +305,103 @@ function App() {
                       <a href='mailto:contact@kitscanes.com'>
                         Contact Kit's Canes →
                       </a>
+                    </section>
+                  </section>
+                )}
+
+                {tab.id === 'collaborations' && (
+                  <section id='collaborations'>
+                    <h2>Collaborations</h2>
+                    <p>
+                      Kit's work extends beyond canes into the world of tactile
+                      art and sensory experiences, collaborating with
+                      organizations that share his vision of accessibility and
+                      artistic expression.
+                    </p>
+
+                    {/* The Origin Stories Project */}
+                    <section className='collaboration-section'>
+                      <div className='collaboration-content'>
+                        <div className='collaboration-text'>
+                          <h3>The Origin Stories Project</h3>
+                          <p>
+                            Kit is featured in The Origin Stories Project, where
+                            he shares his sensory experience as a blind artist.
+                            His work explores the intersection of vision, touch,
+                            and artistic expression.
+                          </p>
+                          <p>
+                            In his artist statement, Kit describes his visual
+                            experience with Charles Bonnet syndrome, where his
+                            central vision is filled with undulating clusters of
+                            pink, red, and yellow-green dots that sparkle, along
+                            with pink-red spirals that look like old-fashioned
+                            lollipops.
+                          </p>
+                          <p>
+                            Kit's mantra: "Just say, 'Thank you.'" reflects his
+                            gratitude for the vision he does have and all the
+                            goodness in his world.
+                          </p>
+                          <a
+                            href='https://www.originstoriesproject.org/collections/kit-rosefield'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='collaboration-link'
+                          >
+                            View Kit's Origin Story →
+                          </a>
+                        </div>
+                        <div className='collaboration-image'>
+                          <div className='image-placeholder'>
+                            <p>
+                              Image placeholder for The Origin Stories Project
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Fully Tactile Art SF */}
+                    <section className='collaboration-section'>
+                      <div className='collaboration-content'>
+                        <div className='collaboration-text'>
+                          <h3>Fully Tactile Art SF</h3>
+                          <p>
+                            Kit collaborates with Fully Tactile Art SF, a
+                            non-profit organization dedicated to creating free
+                            public art spaces that engage not only the sense of
+                            touch but all the senses.
+                          </p>
+                          <p>
+                            This collaboration aligns perfectly with Kit's work
+                            in creating tactile, accessible art experiences. The
+                            organization transforms how people interact with
+                            art, providing unique environments where artists can
+                            re-imagine how their work is experienced and
+                            enjoyed.
+                          </p>
+                          <p>
+                            Fully Tactile Art SF is fiscally sponsored by
+                            Intersection for the Arts, making donations
+                            tax-deductible and supporting the tactile art
+                            revolution.
+                          </p>
+                          <a
+                            href='https://fullytactileartsf.org/'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='collaboration-link'
+                          >
+                            Visit Fully Tactile Art SF →
+                          </a>
+                        </div>
+                        <div className='collaboration-image'>
+                          <div className='image-placeholder'>
+                            <p>Image placeholder for Fully Tactile Art SF</p>
+                          </div>
+                        </div>
+                      </div>
                     </section>
                   </section>
                 )}
