@@ -74,7 +74,7 @@ function App() {
 
       <header>
         <h1>
-          <img id='logo' src='../public/logo.png' alt="Kit's Canes logo" />
+          <img id='logo' src='/logo.png' alt="Kit's Canes logo" />
           Kit's Canes
         </h1>
         <nav
