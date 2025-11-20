@@ -42,11 +42,7 @@ function App() {
       case ' ':
         event.preventDefault();
         // Move focus to content on Enter/Space
-        setTimeout(() => {
-          const tabPanel = document.getElementById(`panel-${activeTab}`);
-          tabPanel?.focus();
-        }, 0);
-        return;
+        break;
       default:
         return;
     }
@@ -56,7 +52,7 @@ function App() {
     // Focus the new tab button (not content)
     setTimeout(() => {
       const newTabButton = document.getElementById(`tab-${newTab.id}`);
-      newTabButton?.focus();
+      newTabButton?.focus({ preventScroll: true });
     }, 0);
   };
 
@@ -65,7 +61,7 @@ function App() {
     // Move focus to the tabpanel content
     setTimeout(() => {
       const tabPanel = document.getElementById(`panel-${tabId}`);
-      tabPanel?.focus();
+      tabPanel?.focus({ preventScroll: true });
     }, 0);
   };
 
