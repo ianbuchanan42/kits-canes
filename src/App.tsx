@@ -42,11 +42,7 @@ function App() {
       case ' ':
         event.preventDefault();
         // Move focus to content on Enter/Space
-        setTimeout(() => {
-          const tabPanel = document.getElementById(`panel-${activeTab}`);
-          tabPanel?.focus({ preventScroll: true });
-        }, 0);
-        return;
+        break;
       default:
         return;
     }
